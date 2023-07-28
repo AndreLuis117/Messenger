@@ -1,4 +1,5 @@
-﻿using Messenger.App;
+﻿using Messenger.Domain.Interfaces.Services;
+using Messenger.Infra;
 using Microsoft.Extensions.DependencyInjection;
 
 class Program

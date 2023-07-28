@@ -8,16 +8,19 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace Messenger.Business.Services
 {
     public class EmailService : BaseService<Email>, IEmailService
     {
         private readonly IBaseRepository<Email> _emailRepository;
+        private readonly IConfiguration _configuration;
 
-        public EmailService(IBaseRepository<Email> baseRepository) : base(baseRepository)
+        public EmailService(IBaseRepository<Email> baseRepository, IConfiguration configuration) : base(baseRepository)
         {
             this._emailRepository = baseRepository;
+            this._configuration = configuration;
         }
 
         public void SendEmails()
